@@ -58,7 +58,8 @@ keep <- append(keep, length(labeledData))
 subset <- select(labeledData, keep)
 
 ## 3.  Uses descriptive activity names to name the activities in the data set
-revalue(as.character(subset$label), c("1" = "WALKING", "2" = "WALKING_UPSTAIRS",
+
+subset$label <- revalue(as.character(subset$label), c("1" = "WALKING", "2" = "WALKING_UPSTAIRS",
                                       "3" = "WALKING_DOWNSTAIRS", "4" = "SITTING",
                                       "5" = "STANDING", "6" = "LAYING") )
 
